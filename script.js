@@ -142,10 +142,15 @@ $(document).ready(function() {
     //Keyboard Controller
     $(document).keydown(function(e) {
         var key = e.which;
-        if (key == "37" && d != "right") d = "left";
-        else if (key == "38" && d != "down") d = "up";
-        else if (key == "39" && d != "left") d = "right";
-        else if (key == "40" && d != "up") d = "down";
+        if (document.getElementById('final_score').innerHTML >= '0') {
+            alert("Click on the play again button to start")
+        } else {
+            if (key == "37" && d != "right") d = "left";
+            else if (key == "38" && d != "down") d = "up";
+            else if (key == "39" && d != "left") d = "right";
+            else if (key == "40" && d != "up") d = "down";
+        }
+
     });
 });
 
