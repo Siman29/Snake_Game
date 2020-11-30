@@ -1,3 +1,20 @@
+@media print {
+    body {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 10px 0px auto 0px;
+    }
+    #stats {
+        width: 80%;
+        margin: 5%;
+    }
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,13 +22,14 @@
 }
 
 body {
-    background: #000000 url(img.jpg) no-repeat top center;
+    background: #000000 url(img.jpg) no-repeat;
     background-size: 100% 100%;
     text-align: center;
     align-items: center;
 }
 
 .container {
+    display: flexbox;
     margin: 30px auto 0 auto;
     width: 600px;
     position: relative;
@@ -22,13 +40,14 @@ p {
 }
 
 #overlay {
+    padding: 200px;
     display: none;
     text-align: center;
     position: absolute;
-    top: 170px;
-    left: 180px;
+    /*top: 170px;
+    left: 180px;*/
     overflow: auto;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
 }
 
@@ -50,20 +69,49 @@ a:hover {
 }
 
 canvas {
+    display: flexbox;
     align-self: center;
     background-color: black;
     border: 1px solid whitesmoke;
+    overflow-x: auto;
+    height: auto;
+    width: 100%;
+}
+
+.direction {
+    margin: 1%;
+    padding: 1%;
+    display: none;
+}
+
+.move {
+    float: left;
+    margin: 1%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.move:first-child {
+    margin-left: 25%;
+}
+
+.move:last-child {
+    margin-right: 25%;
 }
 
 #stats {
+    margin: 30px auto 0 auto;
     width: 580px;
     background-color: #333333;
+    display: flexbox;
     border: 1px solid rgb(7, 7, 7);
     padding: 10px;
     font-size: 18px;
     font-weight: bolder;
-    overflow: auto;
-    margin-top: 5px;
+    overflow-x: auto;
+    margin-top: 8%;
 }
 
 #score,
@@ -86,11 +134,10 @@ button {
 }
 
 button:hover {
-    background-color: rgb(189, 186, 186);
+    background-color: rgb(255, 255, 255);
     transform: scale(1.01, 1.02);
-    transition: 1.2s ease-out;
-    color: black;
-    font-weight: bolder;
+    transition: 1.02s ease-out;
+    border: 1px solid black;
 }
 
 span {
